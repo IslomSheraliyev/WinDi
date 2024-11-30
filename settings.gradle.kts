@@ -21,3 +21,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "WinDi"
 include(":app")
+
+include(":core:data")
+include(":core:presenter")
+include(":core:domain")
+
+include(":feature:auth")
+include(":feature:chat")
+include(":feature:profile")
