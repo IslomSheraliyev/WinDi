@@ -11,7 +11,6 @@ class ColorScheme(
     black: Color,
     white: Color,
     labelPrimary: Color,
-    labelSecondary: Color,
     secondary: Color,
     tertiary: Color,
     grey: Color,
@@ -23,7 +22,6 @@ class ColorScheme(
     var black by mutableStateOf(black, structuralEqualityPolicy())
     var white by mutableStateOf(white, structuralEqualityPolicy())
     var labelPrimary by mutableStateOf(labelPrimary, structuralEqualityPolicy())
-    var labelSecondary by mutableStateOf(labelSecondary, structuralEqualityPolicy())
     var secondary by mutableStateOf(secondary, structuralEqualityPolicy())
     var tertiary by mutableStateOf(tertiary, structuralEqualityPolicy())
     var grey by mutableStateOf(grey, structuralEqualityPolicy())
@@ -37,7 +35,6 @@ fun winDiLight(
     black: Color = WinDiBlack,
     white: Color = WinDiWhite,
     labelPrimary: Color = WinDiLabelPrimary,
-    labelSecondary: Color = WinDiLabelSecondary,
     secondary: Color = WinDiSecondary,
     tertiary: Color = WinDiTertiary,
     grey: Color = WinDiGrey,
@@ -49,7 +46,6 @@ fun winDiLight(
     black = black,
     white = white,
     labelPrimary = labelPrimary,
-    labelSecondary = labelSecondary,
     secondary = secondary,
     tertiary = tertiary,
     grey = grey,
@@ -63,7 +59,6 @@ fun winDiBlack(
     black: Color = WinDiBlack,
     white: Color = WinDiWhite,
     labelPrimary: Color = WinDiLabelPrimary,
-    labelSecondary: Color = WinDiLabelSecondary,
     secondary: Color = WinDiSecondary,
     tertiary: Color = WinDiTertiary,
     grey: Color = WinDiGrey,
@@ -75,7 +70,6 @@ fun winDiBlack(
     black = black,
     white = white,
     labelPrimary = labelPrimary,
-    labelSecondary = labelSecondary,
     secondary = secondary,
     tertiary = tertiary,
     grey = grey,

@@ -5,7 +5,6 @@ import androidx.compose.ui.graphics.Color
 val WinDiBlack = Color(0xFF000000)
 val WinDiWhite = Color(0xFFFFFFFF)
 val WinDiLabelPrimary = Color(0xFF000000)
-val WinDiLabelSecondary = Color(0x993C3C43)
 val WinDiSecondary = Color(0xFFF4F4F5)
 val WinDiTertiary = Color(0xFF2F2F2F)
 val WinDiGrey = Color(0xFF86868A)
