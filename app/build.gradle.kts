@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace = "uz.isheraliyev.windi"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "uz.isheraliyev.windi"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -56,4 +56,21 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Splash Screen
+    implementation(libs.androidx.core.splashscreen)
+
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Koin
+    implementation(project.dependencies.platform(libs.koin.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.insert.koin.koin.androidx.compose)
+
+    implementation(project(":core:presenter"))
+    implementation(project(":core:data"))
+    implementation(project(":feature:auth"))
+    implementation(project(":feature:register"))
 }

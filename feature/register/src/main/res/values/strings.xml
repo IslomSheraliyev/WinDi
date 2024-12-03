@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="registration">Регистрация</string>
+    <string name="registration_a_to_z_uppercase_rule">Заглавные латинские буквы: от A до Z</string>
+    <string name="registration_a_to_z_lowercase_rule">Строчные латинские буквы: от a до z</string>
+    <string name="registration_number_0_to_9_rule">Цифры от 0 до 9</string>
+    <string name="registration_symbol_rule">Символы: -_</string>
+
+    <string name="registration_name">Имя</string>
+    <string name="registration_username">Имя пользователя</string>
+    <string name="registration_next">Далее</string>
+</resources>
