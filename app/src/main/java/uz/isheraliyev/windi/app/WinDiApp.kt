@@ -6,7 +6,9 @@ import org.koin.core.context.startKoin
 import uz.isheraliyev.core.data.di.Network
 import uz.isheraliyev.core.data.local.AppPreferences
 import uz.isheraliyev.feature.auth.data.di.Auth
-import uz.isheraliyev.feature.auth.presenter.di.AuthViewModel
+import uz.isheraliyev.feature.auth.presentation.di.AuthPresentation
+import uz.isheraliyev.feature.register.data.di.Register
+import uz.isheraliyev.feature.register.presentation.di.RegisterPresentation
 
 class WinDiApp : Application() {
     override fun onCreate() {
@@ -18,7 +20,9 @@ class WinDiApp : Application() {
             modules(
                 Network.module,
                 Auth.module,
-                AuthViewModel.module
+                AuthPresentation.module,
+                Register.module,
+                RegisterPresentation.module
             )
         }
     }

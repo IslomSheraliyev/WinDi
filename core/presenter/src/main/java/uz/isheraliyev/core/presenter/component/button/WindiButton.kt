@@ -14,7 +14,7 @@ import uz.isheraliyev.core.presenter.design.theme.WinDiTheme
 @Composable
 fun WinDiButton(
     text: String,
-    modifier: Modifier,
+    modifier: Modifier = Modifier,
     enabled: Boolean = true,
     contentPaddingValues: PaddingValues = PaddingValues(vertical = 16.dp, horizontal = 32.dp),
     containerColor: Color = WinDiTheme.color.black,

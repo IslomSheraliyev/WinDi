@@ -13,6 +13,6 @@
     <string name="auth_login">Войти</string>
 
     <string name="auth_wrong_code">Неверное код</string>
-    <string name="succeed">Успешно</string>
-    <string name="server_error">Ошибка сервера</string>
+    <string name="auth_succeed">Успешно</string>
+    <string name="auth_server_error">Ошибка сервера</string>
 </resources>
