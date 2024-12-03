@@ -72,4 +72,5 @@ dependencies {
     implementation(project(":core:presenter"))
     implementation(project(":core:data"))
     implementation(project(":feature:auth"))
+    implementation(project(":feature:register"))
 }
