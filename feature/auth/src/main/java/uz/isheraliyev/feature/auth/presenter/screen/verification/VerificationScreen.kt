@@ -66,6 +66,7 @@ fun VerificationScreen(
                 OtpView(
                     modifier = Modifier.align(Alignment.CenterHorizontally),
                     otpText = uiState.otp,
+                    isError = uiState.isError,
                     otpCount = 6,
                     containerColor = WinDiTheme.color.border,
                     containerHeight = 56.dp,

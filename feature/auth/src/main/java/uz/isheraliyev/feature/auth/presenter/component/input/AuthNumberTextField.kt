@@ -4,6 +4,7 @@ import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -66,10 +67,12 @@ fun AuthNumberTextField(
                 textStyle = WinDiTheme.font.bodyMediumMedium.copy(WinDiTheme.color.black),
                 enabled = true,
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Decimal),
-                modifier = Modifier.onFocusChanged {
-                    isFocused = it.isFocused
-                    borderColor = if (it.isFocused) focusedBorderColor else unfocusedBorderColor
-                },
+                modifier = Modifier
+                    .fillMaxSize()
+                    .onFocusChanged {
+                        isFocused = it.isFocused
+                        borderColor = if (it.isFocused) focusedBorderColor else unfocusedBorderColor
+                    },
                 decorationBox = { innerTextField ->
                     TextFieldDefaults.DecorationBox(
                         value = number,

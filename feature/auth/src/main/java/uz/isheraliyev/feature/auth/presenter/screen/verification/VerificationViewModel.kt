@@ -28,6 +28,7 @@ class VerificationViewModel(
 
     fun resendAuthCode() = viewModelScope.launch {
         _uiState.update { it.copy(otp = "") }
+        _actionState.emit(VerificationActionState.Loading)
         when (sendAuthCodeUseCase(uiState.value.number)) {
             is Result.Error -> _actionState.emit(VerificationActionState.ResendError)
             is Result.Success -> _actionState.emit(VerificationActionState.ResendSuccess)
@@ -36,12 +37,16 @@ class VerificationViewModel(
 
     fun setOtp(otp: String) = viewModelScope.launch {
         if (otp.length <= 6 && otp.all { it.isDigit() })
-            _uiState.update { it.copy(otp = otp) }
+            _uiState.update { it.copy(otp = otp, isError = false) }
 
         if (otp.length == 6) {
             _actionState.emit(VerificationActionState.Loading)
             when (val result = checkAuthCodeUseCase(uiState.value.number, uiState.value.otp)) {
-                is Result.Error -> _actionState.emit(VerificationActionState.VerificationError)
+                is Result.Error -> {
+                    _uiState.update { it.copy(isError = true) }
+                    _actionState.emit(VerificationActionState.VerificationError)
+                }
+
                 is Result.Success -> {
                     AppPreferences.accessToken = result.data.accessToken
                     AppPreferences.refreshToken = result.data.refreshToken

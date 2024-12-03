@@ -13,6 +13,7 @@ import kotlinx.serialization.json.Json
 import org.koin.core.module.dsl.singleOf
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.InspektifyKtor
+import uz.isheraliyev.core.data.local.Constants.BASE_URL
 import uz.isheraliyev.core.data.manager.TokenManager
 import uz.isheraliyev.core.data.service.RefreshApiService
 
@@ -29,7 +30,7 @@ object Network {
 fun createHttpClient(tokenManager: TokenManager): HttpClient {
     return HttpClient(Android) {
         defaultRequest {
-            url("https://plannerok.ru/api/v1/users/")
+            url(BASE_URL)
             contentType(ContentType.Application.Json)
         }
 

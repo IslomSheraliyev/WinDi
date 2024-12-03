@@ -3,6 +3,7 @@ package uz.isheraliyev.feature.auth.presenter.screen.credentials
 import androidx.compose.runtime.*
 import kotlinx.coroutines.flow.collectLatest
 import org.koin.androidx.compose.koinViewModel
+import uz.isheraliyev.core.presenter.dialog.LoadingDialog
 
 @Composable
 fun CredentialsRoute(
@@ -32,4 +33,6 @@ fun CredentialsRoute(
             }
         }
     )
+
+    LoadingDialog(isVisible = loading)
 }

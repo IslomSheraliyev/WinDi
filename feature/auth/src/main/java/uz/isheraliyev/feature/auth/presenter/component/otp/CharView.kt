@@ -21,9 +21,11 @@ fun CharView(
     index: Int,
     otpCount: Int,
     text: String,
+    isError: Boolean,
     charColor: Color,
     highlightColor: Color,
     containerColor: Color,
+    errorContainerColor: Color,
     charSize: TextUnit,
     containerWidth: Dp,
     containerHeight: Dp,
@@ -34,7 +36,9 @@ fun CharView(
     passwordChar: String = ""
 ) {
     val containerColor2 =
-        if (index == text.length || (index == otpCount - 1 && text.length == otpCount)) highlightColor else containerColor
+        if (isError) errorContainerColor
+        else if (index == text.length || (index == otpCount - 1 && text.length == otpCount)) highlightColor
+        else containerColor
 
     val modifier = if (type == OTP_VIEW_TYPE_BORDER) Modifier
         .size(containerWidth, containerHeight)

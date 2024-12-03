@@ -9,6 +9,7 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
+import uz.isheraliyev.core.presenter.utils.safeNavigate
 
 const val NUMBER = "number"
 const val VERIFICATION_ROUTE_BASE = "verification_route"
@@ -39,4 +40,4 @@ fun NavGraphBuilder.verificationScreen(
 }
 
 fun NavController.navigateToVerificationScreen(number: String) =
-    navigate("$VERIFICATION_ROUTE_BASE?$NUMBER=$number")
+    safeNavigate("$VERIFICATION_ROUTE_BASE?$NUMBER=$number")

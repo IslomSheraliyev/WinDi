@@ -20,9 +20,11 @@ const val OTP_VIEW_TYPE_BORDER = 2
 @Composable
 fun OtpView(
     otpText: String,
+    isError: Boolean,
     modifier: Modifier = Modifier,
     charColor: Color = WinDiTheme.color.labelPrimary,
     containerColor: Color = Color.Transparent,
+    errorContainerColor: Color = WinDiTheme.color.red,
     selectedContainerColor: Color = Color.Transparent,
     charBackground: Color = WinDiTheme.color.white,
     charSize: TextUnit = WinDiTheme.font.bodyMediumMedium.fontSize,
@@ -58,8 +60,10 @@ fun OtpView(
                         index = index,
                         otpCount = otpCount,
                         text = otpText,
+                        isError = isError,
                         charColor = charColor,
                         containerColor = containerColor,
+                        errorContainerColor = errorContainerColor,
                         highlightColor = selectedContainerColor,
                         charSize = charSize,
                         containerRadius = containerRadius,

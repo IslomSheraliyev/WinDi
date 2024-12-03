@@ -20,6 +20,7 @@ class AuthApiService(
         safeApiCall {
             ktor.post(AuthUrl.SEND_AUTH_CODE) {
                 setBody(body)
+                header(HttpHeaders.Authorization, null)
             }.body()
         }
 

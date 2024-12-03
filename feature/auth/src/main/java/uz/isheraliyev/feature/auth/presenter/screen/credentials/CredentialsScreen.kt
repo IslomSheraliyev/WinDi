@@ -47,7 +47,10 @@ fun CredentialsScreen(
 
                 Spacer(modifier = Modifier.height(24.dp))
 
-                Row(verticalAlignment = Alignment.CenterVertically) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.height(IntrinsicSize.Min)
+                ) {
                     AuthCountryCodeTextField(
                         countryCode = uiState.countryCode,
                         onCodeChange = { onIntent(CredentialsIntent.OnChangeCountryCode(it)) }

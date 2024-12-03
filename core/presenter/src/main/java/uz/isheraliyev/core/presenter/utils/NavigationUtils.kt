@@ -1,4 +1,4 @@
-package uz.isheraliyev.windi.navigation
+package uz.isheraliyev.core.presenter.utils
 
 import androidx.lifecycle.Lifecycle
 import androidx.navigation.NavController

@@ -3,6 +3,7 @@ package uz.isheraliyev.windi.navigation
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import uz.isheraliyev.core.presenter.utils.safePopBackStack
 import uz.isheraliyev.feature.auth.presenter.screen.credentials.CREDENTIALS_ROUTE
 import uz.isheraliyev.feature.auth.presenter.screen.credentials.credentialScreen
 import uz.isheraliyev.feature.auth.presenter.screen.verification.navigateToVerificationScreen
