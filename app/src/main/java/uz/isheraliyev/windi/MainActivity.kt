@@ -7,7 +7,8 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import uz.isheraliyev.windi.ui.theme.WinDiTheme
+import uz.isheraliyev.core.presenter.design.theme.WinDiTheme
+import uz.isheraliyev.windi.navigation.WinDiNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
         )
         setContent {
             WinDiTheme {
-
+                WinDiNavigation()
             }
         }
     }
