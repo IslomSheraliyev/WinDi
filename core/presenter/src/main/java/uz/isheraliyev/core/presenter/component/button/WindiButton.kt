@@ -1,5 +1,6 @@
 package uz.isheraliyev.core.presenter.component.button
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -19,6 +20,7 @@ fun WinDiButton(
     contentPaddingValues: PaddingValues = PaddingValues(vertical = 16.dp, horizontal = 32.dp),
     containerColor: Color = WinDiTheme.color.black,
     contentColor: Color = WinDiTheme.color.white,
+    border: BorderStroke? = null,
     onClick: () -> Unit
 ) {
     Button(
@@ -27,6 +29,7 @@ fun WinDiButton(
         enabled = enabled,
         modifier = modifier,
         contentPadding = contentPaddingValues,
+        border = border,
         colors = ButtonDefaults.buttonColors(
             containerColor = containerColor,
             disabledContentColor = WinDiTheme.color.grey,
@@ -36,7 +39,7 @@ fun WinDiButton(
     ) {
         Text(
             text = text,
-            color = if (enabled) WinDiTheme.color.white else WinDiTheme.color.grey,
+            color = if (enabled) contentColor else WinDiTheme.color.grey,
             style = WinDiTheme.font.bodyMediumSemiBold
         )
     }
