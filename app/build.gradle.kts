@@ -68,6 +68,7 @@ dependencies {
     implementation(libs.koin.core)
     implementation(libs.koin.android)
     implementation(libs.insert.koin.koin.androidx.compose)
+    implementation(libs.ktor.client.auth)
 
     implementation(project(":core:data"))
     implementation(project(":core:domain"))

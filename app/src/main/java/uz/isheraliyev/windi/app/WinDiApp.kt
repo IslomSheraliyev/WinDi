@@ -20,6 +20,7 @@ class WinDiApp : Application() {
         startKoin {
             androidContext(this@WinDiApp)
             modules(
+                App.module,
                 Network.module,
                 Auth.module,
                 AuthPresentation.module,

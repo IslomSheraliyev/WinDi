@@ -4,7 +4,6 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import uz.isheraliyev.core.presenter.utils.safePopBackStack
-import uz.isheraliyev.feature.auth.presentation.screen.credentials.CREDENTIALS_ROUTE
 import uz.isheraliyev.feature.auth.presentation.screen.credentials.credentialScreen
 import uz.isheraliyev.feature.auth.presentation.screen.verification.navigateToVerificationScreen
 import uz.isheraliyev.feature.auth.presentation.screen.verification.verificationScreen
@@ -14,12 +13,12 @@ import uz.isheraliyev.feature.register.presentation.screen.registration.navigate
 import uz.isheraliyev.feature.register.presentation.screen.registration.registerScreen
 
 @Composable
-fun WinDiNavigation() {
+fun WinDiNavigation(startDestination: String) {
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
-        startDestination = CREDENTIALS_ROUTE
+        startDestination = startDestination
     ) {
         credentialScreen(
             onNext = navController::navigateToVerificationScreen
