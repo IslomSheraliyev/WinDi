@@ -23,4 +23,10 @@ object AppPreferences {
         set(value) {
             preferences.edit()?.putString(AppPreferences::refreshToken.name, value)?.apply()
         }
+
+    var isDeviceRegistered: Boolean
+        get() = preferences.getBoolean(AppPreferences::isDeviceRegistered.name, false)
+        set(value) {
+            preferences.edit()?.putBoolean(AppPreferences::isDeviceRegistered.name, value)?.apply()
+        }
 }

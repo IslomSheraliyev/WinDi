@@ -11,6 +11,7 @@ import uz.isheraliyev.core.presenter.design.theme.WinDiTheme
 import uz.isheraliyev.windi.navigation.WinDiNavigation
 
 class MainActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge(
@@ -23,6 +24,7 @@ class MainActivity : ComponentActivity() {
                 Color.Black.toArgb()
             )
         )
+
         setContent {
             WinDiTheme {
                 WinDiNavigation()
