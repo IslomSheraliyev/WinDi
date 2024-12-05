@@ -8,6 +8,8 @@ import uz.isheraliyev.feature.auth.presentation.screen.credentials.CREDENTIALS_R
 import uz.isheraliyev.feature.auth.presentation.screen.credentials.credentialScreen
 import uz.isheraliyev.feature.auth.presentation.screen.verification.navigateToVerificationScreen
 import uz.isheraliyev.feature.auth.presentation.screen.verification.verificationScreen
+import uz.isheraliyev.feature.profile.presentation.screen.navigateToProfileScreen
+import uz.isheraliyev.feature.profile.presentation.screen.profileScreen
 import uz.isheraliyev.feature.register.presentation.screen.registration.navigateToRegisterScreen
 import uz.isheraliyev.feature.register.presentation.screen.registration.registerScreen
 
@@ -23,13 +25,18 @@ fun WinDiNavigation() {
             onNext = navController::navigateToVerificationScreen
         )
         verificationScreen(
-            onUserFound = { },
+            onUserFound = navController::navigateToProfileScreen,
             onUserNotFound = navController::navigateToRegisterScreen,
             onNavigateBack = navController::safePopBackStack
         )
 
         registerScreen(
-            onRegistered = { }
+            onRegistered = navController::navigateToProfileScreen
+        )
+
+        profileScreen(
+            onNavigateBack = navController::safePopBackStack,
+            onUpdateProfile = {}
         )
     }
 }

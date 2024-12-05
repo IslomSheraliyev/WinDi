@@ -69,8 +69,10 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.insert.koin.koin.androidx.compose)
 
-    implementation(project(":core:presenter"))
     implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:presenter"))
     implementation(project(":feature:auth"))
     implementation(project(":feature:register"))
+    implementation(project(":feature:profile"))
 }
