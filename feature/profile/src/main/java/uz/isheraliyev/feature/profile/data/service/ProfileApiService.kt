@@ -25,27 +25,6 @@ class ProfileApiService(
     }
 
     suspend fun postMe(body: PostMeRequest): Result<Unit, DataError.Network> = safeApiCall {
-        ktor.post(ProfileUrl.ME) {
-            setBody(MultiPartFormDataContent(
-                formData {
-                    append(body::name.name, body.name)
-                    append(body::username.name, body.username)
-                    append(body::birthday.name, body.birthday)
-                    append(body::city.name, body.city)
-                    append(body::vk.name, body.vk)
-                    append(body::instagram.name, body.instagram)
-                    append(body::status.name, body.status)
-
-                    append(
-                        key = body::avatar.name,
-                        value = body.avatar.base_64,
-                        headers = Headers.build {
-                            append(HttpHeaders.ContentDisposition, "form-data; name=\"avatar\"; filename=\"${body.avatar.filename}\"")
-                            append(HttpHeaders.ContentType, ContentType.Image.JPEG.toString())
-                        }
-                    )
-                }
-            ))
-        }
+        ktor.post(ProfileUrl.ME) { setBody(body) }.body()
     }
 }

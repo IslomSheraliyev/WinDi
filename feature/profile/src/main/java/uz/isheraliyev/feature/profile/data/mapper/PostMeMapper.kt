@@ -11,8 +11,6 @@ object PostMeMapper {
             username = local.username,
             birthday = local.birthday,
             city = local.city,
-            vk = local.vk,
-            instagram = local.instagram,
             status = local.status,
             avatar = local.avatar.let(avatarMapper)
         )

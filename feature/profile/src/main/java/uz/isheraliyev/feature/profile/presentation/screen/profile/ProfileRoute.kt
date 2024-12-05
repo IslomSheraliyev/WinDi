@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -18,13 +18,12 @@ fun ProfileRoute(
     onUpdateProfile: () -> Unit,
     viewModel: ProfileViewModel = koinViewModel()
 ) {
-
     val uiState by viewModel.uiState.collectAsState()
     var loading by remember { mutableStateOf(true) }
 
     LaunchedEffect(Unit) {
         launch {
-            viewModel.getMe()
+            if (uiState.userDate == null) viewModel.getMe()
             viewModel.actionState.collectLatest { action ->
                 loading = when (action) {
                     ProfileActionState.Error -> false
@@ -45,5 +44,5 @@ fun ProfileRoute(
         }
     )
 
-    LoadingDialog(isVisible = loading)
+    LoadingDialog(isVisible = loading && uiState.userDate == null)
 }

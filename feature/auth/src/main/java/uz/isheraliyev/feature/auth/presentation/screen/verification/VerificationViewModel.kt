@@ -50,6 +50,7 @@ class VerificationViewModel(
                 is Result.Success -> {
                     AppPreferences.accessToken = result.data.accessToken
                     AppPreferences.refreshToken = result.data.refreshToken
+                    AppPreferences.isDeviceRegistered = true
                     _actionState.emit(VerificationActionState.VerificationSuccess(result.data.isUserExists))
                 }
             }

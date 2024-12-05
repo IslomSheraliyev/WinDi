@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

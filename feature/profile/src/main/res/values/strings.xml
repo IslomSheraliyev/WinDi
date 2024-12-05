@@ -6,4 +6,10 @@
     <string name="social_network">Социальная сеть</string>
     <string name="living_city">Город проживания</string>
     <string name="update">Редактировать</string>
+    <string name="edit_profile">Редактировать профиль</string>
+    <string name="name">Имя</string>
+    <string name="username">Имя пользователя</string>
+    <string name="save">Сохранить</string>
+    <string name="choose">Выбрать</string>
+    <string name="choose_date">Выберите дату</string>
 </resources>

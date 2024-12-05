@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -11,15 +11,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TopAppBar
-import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -30,29 +23,12 @@ import uz.isheraliyev.feature.profile.R
 import uz.isheraliyev.feature.profile.presentation.component.card.UserProfileCard
 import uz.isheraliyev.feature.profile.presentation.component.item.ProfileInfoItem
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProfileScreen(
     uiState: ProfileUIState,
     onIntent: (ProfileIntent) -> Unit
 ) {
     Scaffold(
-        topBar = {
-            TopAppBar(
-                title = {},
-                colors = TopAppBarDefaults.topAppBarColors(WinDiTheme.color.white),
-                navigationIcon = {
-                    IconButton(
-                        onClick = { onIntent(ProfileIntent.OnNavigateBack) }
-                    ) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Default.ArrowBack,
-                            contentDescription = null
-                        )
-                    }
-                }
-            )
-        },
         content = { paddingValues ->
             Column(
                 modifier = Modifier

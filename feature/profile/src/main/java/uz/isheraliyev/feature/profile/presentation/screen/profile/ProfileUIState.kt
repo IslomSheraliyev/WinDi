@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 import uz.isheraliyev.feature.profile.domain.model.GetMeModel
 

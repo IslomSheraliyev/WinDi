@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 sealed interface ProfileActionState {
     data object Loading : ProfileActionState

@@ -1,4 +1,4 @@
-package uz.isheraliyev.feature.profile.presentation.screen
+package uz.isheraliyev.feature.profile.presentation.screen.profile
 
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut

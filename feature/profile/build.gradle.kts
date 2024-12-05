@@ -72,6 +72,11 @@ dependencies {
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
 
+    // DatePicker
+    implementation(libs.snapper)
+    implementation(libs.threetenabp)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+
     implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:presenter"))

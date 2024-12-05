@@ -70,6 +70,11 @@ dependencies {
     implementation(libs.insert.koin.koin.androidx.compose)
     implementation(libs.ktor.client.auth)
 
+    // DatePicker
+    implementation(libs.snapper)
+    implementation(libs.threetenabp)
+    coreLibraryDesugaring(libs.desugar.jdk.libs)
+
     implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:presenter"))

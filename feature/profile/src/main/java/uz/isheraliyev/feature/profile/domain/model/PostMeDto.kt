@@ -5,8 +5,6 @@ data class PostMeDto(
     val username: String,
     val birthday: String,
     val city: String,
-    val vk: String,
-    val instagram: String,
     val status: String,
     val avatar: Avatar
 ) {
