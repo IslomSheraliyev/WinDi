@@ -1,8 +1,8 @@
 package uz.isheraliyev.windi.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.rememberNavController
 import uz.isheraliyev.core.data.local.AppPreferences
 import uz.isheraliyev.core.presenter.utils.safePopBackStack
 import uz.isheraliyev.feature.auth.presentation.screen.credentials.CREDENTIALS_ROUTE
@@ -18,12 +18,12 @@ import uz.isheraliyev.feature.register.presentation.screen.registration.navigate
 import uz.isheraliyev.feature.register.presentation.screen.registration.registerScreen
 
 @Composable
-fun WinDiNavigation() {
-    val navController = rememberNavController()
-
+fun WinDiNavigation(
+    navController: NavHostController
+) {
     NavHost(
         navController = navController,
-        startDestination = if(AppPreferences.isDeviceRegistered) PROFILE_ROUTE else CREDENTIALS_ROUTE
+        startDestination = if (AppPreferences.isDeviceRegistered) PROFILE_ROUTE else CREDENTIALS_ROUTE
     ) {
         credentialScreen(
             onNext = navController::navigateToVerificationScreen
