@@ -17,18 +17,23 @@ import io.ktor.http.contentType
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
+import org.koin.core.component.KoinComponent
 import org.koin.dsl.module
 import sp.bvantur.inspektify.ktor.InspektifyKtor
 import uz.isheraliyev.core.data.local.AppPreferences
 import uz.isheraliyev.core.data.local.Constants.BASE_URL
 import uz.isheraliyev.core.data.local.Constants.REFRESH_TOKEN
+import uz.isheraliyev.core.data.local.NavigationManager
 import uz.isheraliyev.core.data.request.RefreshTokenRequest
 import uz.isheraliyev.core.data.response.RefreshTokenResponse
 
-object Network {
+object Network : KoinComponent {
+
     @OptIn(ExperimentalSerializationApi::class)
     val module = module {
+        single { NavigationManager() }
         single {
+            val navigationManager: NavigationManager by inject()
             HttpClient(Android) {
                 defaultRequest {
                     url(BASE_URL)
@@ -70,8 +75,12 @@ object Network {
                                         accessToken = newTokens.access_token,
                                         refreshToken = newTokens.refresh_token
                                     )
-                                } else null
+                                } else {
+                                    navigationManager.navigate("credentials_route")
+                                    null
+                                }
                             } catch (e: Exception) {
+                                navigationManager.navigate("credentials_route")
                                 null
                             }
                         }
